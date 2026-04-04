@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "leadenrich-mcp"
+version = "0.2.0"
+description = "MCP server for waterfall lead enrichment — cascades Apollo, Clearbit, and Hunter for maximum data coverage"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Carson Roell" },
+]
+keywords = ["mcp", "lead-enrichment", "apollo", "clearbit", "hunter", "sales", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business",
+]
+dependencies = [
+    "fastmcp>=3.0.0",
+    "httpx>=0.27.0",
+    "stripe>=8.0.0",
+    "uvicorn>=0.30.0",
+]
+
+[project.urls]
+Homepage = "https://freedomengineers.tech"
+Repository = "https://github.com/carsonroell-debug/leadenrich-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["leadenrich_mcp"]
+
+[project.scripts]
+leadenrich-mcp = "leadenrich_mcp.server:mcp.run"

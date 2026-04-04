@@ -1,0 +1,31 @@
+{
+  "name": "LeadEnrich",
+  "description": "Waterfall lead enrichment MCP server — cascades Apollo, Clearbit, and Hunter concurrently for maximum data coverage",
+  "version": "0.2.0",
+  "tools": [
+    {
+      "name": "enrich_lead",
+      "description": "Full waterfall enrichment — email, domain, or name"
+    },
+    {
+      "name": "find_email",
+      "description": "Find email from name + company domain"
+    },
+    {
+      "name": "enrich_company",
+      "description": "Company firmographics by domain"
+    },
+    {
+      "name": "enrich_batch",
+      "description": "Concurrent batch enrichment (up to 25 leads)"
+    },
+    {
+      "name": "check_usage",
+      "description": "Quota, cost tracking, and cache stats"
+    },
+    {
+      "name": "health_check",
+      "description": "Server health and provider status"
+    }
+  ]
+}

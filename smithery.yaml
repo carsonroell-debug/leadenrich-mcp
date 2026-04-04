@@ -1,0 +1,36 @@
+# Smithery configuration for LeadEnrich MCP Server
+# https://smithery.ai/docs/config
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      APOLLO_API_KEY:
+        type: string
+        description: "Apollo.io API key for lead enrichment"
+        default: ""
+      CLEARBIT_API_KEY:
+        type: string
+        description: "Clearbit API key for company and contact enrichment"
+        default: ""
+      HUNTER_API_KEY:
+        type: string
+        description: "Hunter.io API key for email finding and verification"
+        default: ""
+      LEADENRICH_API_KEY:
+        type: string
+        description: "API key for authenticating MCP clients (optional, for metering)"
+        default: ""
+    required: []
+  commandFunction: |
+    (config) => ({
+      command: "python",
+      args: ["main.py"],
+      env: {
+        APOLLO_API_KEY: config.APOLLO_API_KEY || "",
+        CLEARBIT_API_KEY: config.CLEARBIT_API_KEY || "",
+        HUNTER_API_KEY: config.HUNTER_API_KEY || "",
+        LEADENRICH_API_KEY: config.LEADENRICH_API_KEY || ""
+      }
+    })

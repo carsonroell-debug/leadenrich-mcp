@@ -1,0 +1,27 @@
+# LeadEnrich MCP Server
+
+> Waterfall lead enrichment for AI agents. Cascades through Apollo, Clearbit, and Hunter to build the most complete lead profile in a single call.
+
+## Tools
+
+- enrich_lead: Full waterfall enrichment for a single lead. Provide email, domain, or name+domain. Returns merged profile with field attribution.
+- find_email: Discover an email address from first name + last name + company domain. Uses Hunter first, falls back to Apollo.
+- enrich_company: Company-only firmographic data by domain. Industry, size, revenue, description, etc.
+- enrich_batch: Batch enrich up to 25 leads concurrently. Each lead cascades through all providers.
+- check_usage: Check your current usage, remaining quota, and cost tracking.
+- health_check: Server status, configured providers, and cache stats.
+
+## Resources
+
+- leadenrich://example-result: Sample enrichment output showing the merged data schema with field attribution.
+
+## Quick Start
+
+```
+pip install -r requirements.txt
+fastmcp run main.py --transport streamable-http --port 8300
+```
+
+## Config
+
+Set APOLLO_API_KEY, CLEARBIT_API_KEY, HUNTER_API_KEY, and LEADENRICH_API_KEY as environment variables. All are optional — the server uses whichever providers are configured.
