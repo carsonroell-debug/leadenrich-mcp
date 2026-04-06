@@ -4,9 +4,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI](https://img.shields.io/pypi/v/leadenrich-mcp)](https://pypi.org/project/leadenrich-mcp/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-6366f1.svg)](https://modelcontextprotocol.io)
+[![MCPize](https://img.shields.io/badge/MCPize-Install-a855f7)](https://mcpize.com/mcp/leadenrich-mcp)
 
 Waterfall lead enrichment for AI agents. Cascades through Apollo, Clearbit, and Hunter to build the most complete lead profile in a single call.
+
+> **One-click install:** [Install on MCPize](https://mcpize.com/mcp/leadenrich-mcp) | `pip install leadenrich-mcp`
 
 LeadEnrich MCP exposes lead and company enrichment through the Model Context Protocol (MCP), so tools like Claude and Cursor can run enrichment workflows directly. Give it an email, domain, or name and it returns a merged profile with field attribution showing which provider contributed each data point.
 
@@ -237,3 +241,8 @@ This server is a translation layer between MCP tool calls and multiple enrichmen
 ---
 
 Built by [Freedom Engineers](https://freedomengineers.tech)
+
+## Related
+
+- [SelfHeal MCP](https://mcpize.com/mcp/selfheal-mcp) — Self-healing proxy for MCP servers
+- [SiteHealth MCP](https://mcpize.com/mcp/sitehealth-mcp) — Full website health audit
