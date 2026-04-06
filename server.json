@@ -1,31 +1,48 @@
 {
-  "name": "LeadEnrich",
-  "description": "Waterfall lead enrichment MCP server — cascades Apollo, Clearbit, and Hunter concurrently for maximum data coverage",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.carsonlabs/leadenrich-mcp",
+  "description": "Waterfall lead enrichment — cascades Apollo, Clearbit, and Hunter for max coverage",
+  "repository": {
+    "url": "https://github.com/carsonlabs/leadenrich-mcp",
+    "source": "github"
+  },
   "version": "0.2.0",
-  "tools": [
+  "packages": [
     {
-      "name": "enrich_lead",
-      "description": "Full waterfall enrichment — email, domain, or name"
-    },
-    {
-      "name": "find_email",
-      "description": "Find email from name + company domain"
-    },
-    {
-      "name": "enrich_company",
-      "description": "Company firmographics by domain"
-    },
-    {
-      "name": "enrich_batch",
-      "description": "Concurrent batch enrichment (up to 25 leads)"
-    },
-    {
-      "name": "check_usage",
-      "description": "Quota, cost tracking, and cache stats"
-    },
-    {
-      "name": "health_check",
-      "description": "Server health and provider status"
+      "registryType": "pypi",
+      "identifier": "leadenrich-mcp",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "APOLLO_API_KEY",
+          "description": "Apollo.io API key for lead enrichment",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "CLEARBIT_API_KEY",
+          "description": "Clearbit API key for company/contact enrichment",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "HUNTER_API_KEY",
+          "description": "Hunter.io API key for email finding",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
     }
+  ],
+  "tools": [
+    { "name": "enrich_lead", "description": "Full waterfall enrichment — email, domain, or name" },
+    { "name": "find_email", "description": "Find email from name + company domain" },
+    { "name": "enrich_company", "description": "Company firmographics by domain" },
+    { "name": "enrich_batch", "description": "Concurrent batch enrichment (up to 25 leads)" },
+    { "name": "check_usage", "description": "Quota, cost tracking, and cache stats" },
+    { "name": "health_check", "description": "Server health and provider status" }
   ]
 }

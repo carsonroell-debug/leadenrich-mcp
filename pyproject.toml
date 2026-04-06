@@ -29,7 +29,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://freedomengineers.tech"
-Repository = "https://github.com/carsonroell-debug/leadenrich-mcp"
+Repository = "https://github.com/carsonlabs/leadenrich-mcp"
 
 [tool.hatch.build.targets.wheel]
 packages = ["leadenrich_mcp"]

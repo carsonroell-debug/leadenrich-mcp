@@ -1,4 +1,4 @@
-<!-- mcp-name: io.github.carsonroell-debug/leadenrich-mcp -->
+<!-- mcp-name: io.github.carsonlabs/leadenrich-mcp -->
 
 # LeadEnrich MCP Server
 
@@ -90,7 +90,7 @@ Each field in the result includes attribution so you know exactly which provider
 ## Quick Start
 
 ```bash
-git clone https://github.com/carsonroell-debug/leadenrich-mcp.git
+git clone https://github.com/carsonlabs/leadenrich-mcp.git
 cd leadenrich-mcp
 pip install -r requirements.txt
 python main.py
