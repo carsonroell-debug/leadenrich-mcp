@@ -6,17 +6,26 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI](https://img.shields.io/pypi/v/leadenrich-mcp)](https://pypi.org/project/leadenrich-mcp/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-6366f1.svg)](https://modelcontextprotocol.io)
-[![MCPize](https://img.shields.io/badge/MCPize-Install-a855f7)](https://mcpize.com/mcp/leadenrich-mcp)
+[![MCPize](https://img.shields.io/badge/MCPize-Install-a855f7)](https://mcpize.com/mcp/leadenrich-mcp?ref=YHCCR&utm_source=github&utm_medium=readme)
 
 Waterfall lead enrichment for AI agents. Cascades through Apollo, Clearbit, and Hunter to build the most complete lead profile in a single call.
 
-> **One-click install:** [Install on MCPize](https://mcpize.com/mcp/leadenrich-mcp) | `pip install leadenrich-mcp`
+> **One-click install:** [Install on MCPize](https://mcpize.com/mcp/leadenrich-mcp?ref=YHCCR&utm_source=github&utm_medium=readme) | `pip install leadenrich-mcp`
 
 LeadEnrich MCP exposes lead and company enrichment through the Model Context Protocol (MCP), so tools like Claude and Cursor can run enrichment workflows directly. Give it an email, domain, or name and it returns a merged profile with field attribution showing which provider contributed each data point.
 
 ## Quick Connect
 
-### Claude Desktop
+### 1. Install and start the server
+
+```bash
+pip install leadenrich-mcp
+leadenrich-mcp
+```
+
+The server starts on `http://localhost:8300/mcp` by default.
+
+### 2a. Connect from Claude Desktop
 
 Add to `claude_desktop_config.json`:
 
@@ -30,7 +39,7 @@ Add to `claude_desktop_config.json`:
 }
 ```
 
-### Claude Code
+### 2b. Connect from Claude Code
 
 ```bash
 claude mcp add leadenrich --transport http http://localhost:8300/mcp
@@ -238,11 +247,26 @@ LeadEnrich MCP Server (this repo)
 
 This server is a translation layer between MCP tool calls and multiple enrichment provider APIs, with built-in caching, usage metering, and waterfall merge logic.
 
+## Free vs Pro
+
+| Tool | Free | Pro ($29/mo) |
+|------|------|-------------|
+| `enrich_lead` | Yes (Hunter only) | Yes (full waterfall: Apollo + Clearbit + Hunter) |
+| `check_usage` | Yes | Yes |
+| `health_check` | Yes | Yes |
+| `find_email` | - | Yes |
+| `enrich_company` | - | Yes |
+| `enrich_batch` | - | Yes |
+
+Free tier gives you single-provider lookups via Hunter. Pro unlocks the full 3-provider waterfall, email finder, company enrichment, and batch operations.
+
+**[Upgrade to Pro on MCPize](https://mcpize.com/mcp/leadenrich-mcp?ref=YHCCR&utm_source=github&utm_medium=readme)** — $29/mo or $290/yr.
+
 ---
 
 Built by [Freedom Engineers](https://freedomengineers.tech)
 
 ## Related
 
-- [SelfHeal MCP](https://mcpize.com/mcp/selfheal-mcp) — Self-healing proxy for MCP servers
-- [SiteHealth MCP](https://mcpize.com/mcp/sitehealth-mcp) — Full website health audit
+- [SelfHeal MCP](https://mcpize.com/mcp/selfheal-mcp?ref=YHCCR&utm_source=github&utm_medium=readme) — Self-healing proxy for MCP servers
+- [SiteHealth MCP](https://mcpize.com/mcp/sitehealth-mcp?ref=YHCCR&utm_source=github&utm_medium=readme) — Full website health audit
